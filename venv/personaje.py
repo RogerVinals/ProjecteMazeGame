@@ -12,10 +12,14 @@ class Personaje(pygame.sprite.Sprite): #clase jugador
                 self.rect = self.image.get_rect()
 
         def move(self,tecla):
-                mant = pygame.key.get_pressed()
                 if tecla == pygame.K_LEFT:
-                        while mant[K_LEFT] == True:
-                                self.rect.x -= 5
+                        self.rect.x -= 2
+                if tecla == pygame.K_RIGHT:
+                        self.rect.x += 2
+                if tecla == pygame.K_UP:
+                        self.rect.y -= 2
+                if tecla == pygame.K_DOWN:
+                        self.rect.y += 2
 
 
 

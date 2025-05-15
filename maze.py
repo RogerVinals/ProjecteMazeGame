@@ -15,7 +15,7 @@ screen = pygame.display.set_mode([WIDTH, HEIGHT]) #Display de la pantalla
 timer = pygame.time.Clock() #Timer para que se ejecute
 fps = 60
 pygame.display.set_caption('MAZEGAME')
-gameIcon = pygame.image.load('../sprites/fotojuego.jpg')
+gameIcon = pygame.image.load('sprites/fotojuego.jpg')
 pygame.display.set_icon(gameIcon)
 
 #Sprites

@@ -6,6 +6,10 @@ Blanco = (255,255,255)
 Azul = (0,0,255)
 Marron = (158,70,36)
 
+
+
+
+
 class Muro(pygame.sprite.Sprite):
     def __init__(self,x,y,ancho,alto):
         super().__init__()
@@ -14,7 +18,14 @@ class Muro(pygame.sprite.Sprite):
         self.rect = self.image.get_rect(topleft=(x,y))
 
 
-class Puerta():
+
+
+class Puerta(pygame.sprite.Sprite):
     def __init__(self,x,y,ancho,alto):
         super().__init__()
         self.image = pygame.Surface((ancho,alto))
+        self.image.fill(Azul)
+        self.rect = self.image.get_rect(topleft=(x, y))
+
+if __name__ == '__main__':
+    pass

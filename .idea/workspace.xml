@@ -4,13 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c55f66ae-abd8-406f-b0a1-603e340a34cf" name="Changes" comment="Codigos nuevos y funcionan">
-      <change afterPath="$PROJECT_DIR$/venv/muros.py" afterDir="false" />
+    <list default="true" id="c55f66ae-abd8-406f-b0a1-603e340a34cf" name="Changes" comment="Venv eliminado">
+      <change afterPath="$PROJECT_DIR$/model/laberinto.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/presenter/colisiones.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/maze.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sprites/playercausa.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/laberinto.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/laberinto.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/maze.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/maze.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/personaje.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/personaje.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laberinto.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maze.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/muros.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/muros.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/personaje.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/personaje.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,8 +54,10 @@
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "Python.Procedural.executor": "Run",
     "Python.Prueba.executor": "Run",
+    "Python.colisiones.executor": "Run",
     "Python.laberinto.executor": "Run",
     "Python.maze.executor": "Run",
+    "Python.menu.executor": "Run",
     "Python.muros.executor": "Run",
     "Python.personaje.executor": "Run",
     "Python.prueba gpt.executor": "Run",
@@ -69,10 +73,70 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\roger\Desktop\Uni\PRE\MazeGame\model" />
+      <recent name="C:\Users\roger\Desktop\Uni\PRE\MazeGame\view" />
+      <recent name="C:\Users\roger\Desktop\Uni\PRE\MazeGame" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="laberinto" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.12" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="" />
+      <option name="SCRIPT_NAME" value="C:\Users\roger\Desktop\Uni\PRE\MazeGame\model\laberinto.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="maze" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="MazeGame" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.12" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\roger\Desktop\Uni\PRE\MazeGame\view\maze.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.maze" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-f27c65a3e318-JavaScript-PY-251.23774.444" />
         <option value="bundled-python-sdk-890ed5b35930-d9c5bdb153f4-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-251.23774.444" />
       </set>
     </attachedChunks>
@@ -89,7 +153,11 @@
       <workItem from="1746693591649" duration="4680000" />
       <workItem from="1747158787028" duration="72000" />
       <workItem from="1747245021060" duration="501000" />
-      <workItem from="1747312840468" duration="8836000" />
+      <workItem from="1747312840468" duration="11888000" />
+      <workItem from="1747336323108" duration="205000" />
+      <workItem from="1747421291420" duration="83000" />
+      <workItem from="1747760681925" duration="15000" />
+      <workItem from="1750069784970" duration="19000" />
     </task>
     <task id="LOCAL-00001" summary="Codigos">
       <option name="closed" value="true" />
@@ -107,13 +175,42 @@
       <option name="project" value="LOCAL" />
       <updated>1746545975683</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Esto ya funciona y se puede publicar">
+      <option name="closed" value="true" />
+      <created>1747325544842</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1747325544842</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Gitignore">
+      <option name="closed" value="true" />
+      <created>1747325889851</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1747325889851</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Venv eliminado">
+      <option name="closed" value="true" />
+      <created>1747325982875</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1747325982875</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="a25fa76b-1601-4bf6-bff9-0908cc1ca3ae" value="TOOL_WINDOW" />
+      </map>
+    </option>
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
@@ -133,19 +230,27 @@
             </State>
           </value>
         </entry>
+        <entry key="a25fa76b-1601-4bf6-bff9-0908cc1ca3ae">
+          <value>
+            <State />
+          </value>
+        </entry>
       </map>
     </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Codigos" />
     <MESSAGE value="Codigos nuevos y funcionan" />
-    <option name="LAST_COMMIT_MESSAGE" value="Codigos nuevos y funcionan" />
+    <MESSAGE value="Esto ya funciona y se puede publicar" />
+    <MESSAGE value="Gitignore" />
+    <MESSAGE value="Venv eliminado" />
+    <option name="LAST_COMMIT_MESSAGE" value="Venv eliminado" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/MazeGame$prueba_gpt.coverage" NAME="prueba gpt Coverage Results" MODIFIED="1747313821745" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv" />
     <SUITE FILE_PATH="coverage/MazeGame$Procedural.coverage" NAME="Procedural Coverage Results" MODIFIED="1747314251674" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv" />
     <SUITE FILE_PATH="coverage/MazeGame$personaje.coverage" NAME="personaje Coverage Results" MODIFIED="1746115702663" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv" />
-    <SUITE FILE_PATH="coverage/MazeGame$maze.coverage" NAME="maze Coverage Results" MODIFIED="1747325234512" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv" />
+    <SUITE FILE_PATH="coverage/MazeGame$maze.coverage" NAME="maze Coverage Results" MODIFIED="1747421297890" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MazeGame$Prueba.coverage" NAME="Prueba Coverage Results" MODIFIED="1746696915708" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../.." />
     <SUITE FILE_PATH="coverage/MazeGame$muros.coverage" NAME="muros Coverage Results" MODIFIED="1747321458722" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv" />
     <SUITE FILE_PATH="coverage/MazeGame$laberinto.coverage" NAME="laberinto Coverage Results" MODIFIED="1747314916836" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv" />

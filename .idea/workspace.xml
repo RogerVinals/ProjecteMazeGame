@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c55f66ae-abd8-406f-b0a1-603e340a34cf" name="Changes" comment="Venv eliminado">
-      <change afterPath="$PROJECT_DIR$/model/laberinto.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/presenter/colisiones.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/maze.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laberinto.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/maze.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/muros.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/muros.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/personaje.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/personaje.py" afterDir="false" />
-    </list>
+    <list default="true" id="c55f66ae-abd8-406f-b0a1-603e340a34cf" name="Changes" comment="separación MVP falta desarollo" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -199,7 +190,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747325982875</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="separación MVP falta desarollo">
+      <option name="closed" value="true" />
+      <created>1750337397142</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1750337397142</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -232,7 +231,13 @@
         </entry>
         <entry key="a25fa76b-1601-4bf6-bff9-0908cc1ca3ae">
           <value>
-            <State />
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -244,7 +249,8 @@
     <MESSAGE value="Esto ya funciona y se puede publicar" />
     <MESSAGE value="Gitignore" />
     <MESSAGE value="Venv eliminado" />
-    <option name="LAST_COMMIT_MESSAGE" value="Venv eliminado" />
+    <MESSAGE value="separación MVP falta desarollo" />
+    <option name="LAST_COMMIT_MESSAGE" value="separación MVP falta desarollo" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/MazeGame$prueba_gpt.coverage" NAME="prueba gpt Coverage Results" MODIFIED="1747313821745" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv" />

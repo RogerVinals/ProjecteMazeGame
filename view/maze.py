@@ -51,6 +51,6 @@ if __name__ == '__main__':
         all_sprites_list.update() #Update la lista de sprites
         all_sprites_list.draw(screen) #Dibuja Sprites
         pygame.display.flip() #Reset pantalla por cada tick
-        print(colisiones.rect.x,colisiones.rect.y)
+
 
     pygame.quit()

@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c55f66ae-abd8-406f-b0a1-603e340a34cf" name="Changes" comment="separación MVP falta desarollo" />
+    <list default="true" id="c55f66ae-abd8-406f-b0a1-603e340a34cf" name="Changes" comment="separación MVP falta desarollo">
+      <change afterPath="$PROJECT_DIR$/model/boton.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/laberinto.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/laberinto.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/muros.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/muros.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/personaje.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/personaje.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/presenter/colisiones.py" beforeDir="false" afterPath="$PROJECT_DIR$/presenter/colisiones.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/maze.py" beforeDir="false" afterPath="$PROJECT_DIR$/view/maze.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -47,6 +55,7 @@
     "Python.Prueba.executor": "Run",
     "Python.colisiones.executor": "Run",
     "Python.laberinto.executor": "Run",
+    "Python.maze (1).executor": "Run",
     "Python.maze.executor": "Run",
     "Python.menu.executor": "Run",
     "Python.muros.executor": "Run",
@@ -95,6 +104,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="maze (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="MazeGame" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/view" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/view/maze.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="maze" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="MazeGame" />
       <option name="ENV_FILES" value="" />
@@ -121,6 +152,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.maze (1)" />
         <item itemvalue="Python.maze" />
       </list>
     </recent_temporary>
@@ -198,7 +230,15 @@
       <option name="project" value="LOCAL" />
       <updated>1750337397142</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="separación MVP falta desarollo">
+      <option name="closed" value="true" />
+      <created>1750337846569</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1750337846569</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -235,6 +275,17 @@
               <option name="CUSTOM_BOOLEAN_PROPERTIES">
                 <map>
                   <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/main" />
+                      </list>
+                    </value>
+                  </entry>
                 </map>
               </option>
             </State>

@@ -3,6 +3,7 @@ from pygame.sprite import Sprite
 
 
 
+
 class Personaje(pygame.sprite.Sprite): #clase jugador
         def __init__(self,width,height):
                 super().__init__()

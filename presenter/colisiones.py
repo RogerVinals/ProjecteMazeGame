@@ -1,6 +1,12 @@
+from lib2to3.pygram import python_grammar_no_print_and_exec_statement
+
 import pygame
 from pygame import sprite, K_LEFT
 from pygame.sprite import Sprite
+
+
+
+
 class Colisiones(pygame.sprite.Sprite):
     def __init__(self, width, height):
         super().__init__()
@@ -22,3 +28,13 @@ class Colisiones(pygame.sprite.Sprite):
         self.rect.y += dy
         if pygame.sprite.spritecollideany(self, paredes) or self.rect.bottom > alto or self.rect.top < 0:
            self.rect.y -= dy
+
+
+    def pulsar(self,boton,puertas):
+        if pygame.sprite.spritecollideany(self,boton):
+            boton.empty()
+            puertas.empty()
+
+
+
+

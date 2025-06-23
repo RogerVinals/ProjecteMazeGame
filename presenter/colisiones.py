@@ -36,5 +36,10 @@ class Colisiones(pygame.sprite.Sprite):
             puertas.empty()
 
 
+    def victoria(self,meta):
+        if pygame.sprite.spritecollideany(self,meta):
+            meta.empty()
+
+
 
 

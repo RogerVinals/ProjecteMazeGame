@@ -26,20 +26,33 @@ if __name__ == '__main__':
     all_sprites_list = pygame.sprite.Group()
     all_sprites_list.add(player)
 
+
     #Sprite grupo paredes y puertas
     paredes = pygame.sprite.Group()
     door_azul = pygame.sprite.Group()
+    door_verde = pygame.sprite.Group()
 
     #Sprite de botones
     botones_azules = pygame.sprite.Group()
-    bot1 = boton.Boton() #Botones
+    bot1 = boton.BotonAzul() #Botone azul
     botones_azules.add(bot1) #Añadir al grupo sprites
+    botones_verde = pygame.sprite.Group()
+    bot2 = boton.BotonVerde() #Boton Verde
+    botones_verde.add(bot2)
 
 
     #Añadir puertas azules
-    puerta = muros.Puerta(laberinto.puerta1[0], laberinto.puerta1[1], laberinto.puerta1[2], laberinto.puerta1[3])
-    paredes.add(puerta)
-    door_azul.add(puerta)
+    puerta_azul = muros.PuertaAzul(laberinto.puerta1[0], laberinto.puerta1[1], laberinto.puerta1[2], laberinto.puerta1[3])
+    puerta_verde = muros.PuertaVerde(laberinto.puerta2[0], laberinto.puerta2[1], laberinto.puerta2[2], laberinto.puerta2[3])
+    paredes.add(puerta_azul)
+    door_azul.add(puerta_azul)
+    paredes.add(puerta_verde)
+    door_verde.add(puerta_verde)
+
+    #Añadir meta de laberinto
+    meta = boton.Meta(laberinto.meta[0],laberinto.meta[1],laberinto.meta[2],laberinto.meta[3])
+    metas = pygame.sprite.Group()
+    metas.add(meta)
 
 
 
@@ -64,15 +77,24 @@ if __name__ == '__main__':
 
         colisiones.Colisiones.move(player,paredes,WIDTH,HEIGHT) #Llama a la funcion Personaje.move
         colisiones.Colisiones.pulsar(player,botones_azules,door_azul)
+        colisiones.Colisiones.pulsar(player,botones_verde,door_verde)
+        colisiones.Colisiones.victoria(player,metas)
 
 
         if botones_azules.has(bot1) == 0:
-            paredes.remove(puerta)
+            paredes.remove(puerta_azul)
+        if botones_verde.has(bot2) == 0:
+            paredes.remove(puerta_verde)
+        if metas.has(meta) == 0:
+            sys.exit()
 
         all_sprites_list.update() #Update la lista de sprites
         all_sprites_list.draw(screen) #Dibuja Sprites
-        botones_azules.draw(screen) #Dibuja boton
-        door_azul.draw(screen) #Dibuja boton
+        botones_azules.draw(screen) #Dibuja boton azul
+        botones_verde.draw(screen) #Dibuja boton verde
+        door_azul.draw(screen) #Dibuja puerta azul
+        door_verde.draw(screen)#Dibuja puerta verde
+        metas.draw(screen)
         pygame.display.flip() #Reset pantalla por cada tick
 
     pygame.quit()

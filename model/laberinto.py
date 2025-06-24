@@ -1,54 +1,95 @@
+import pygame
 import random
 
-psiz = 50
+psiz = 40  # Tamaño de celda
 
-paredes_lista_1 = [
-    # Boundary walls (with opening at entrance (0,0))
-    (0, 50, 20, 600),  # Left wall leaving gap from y=0 to 50 for entrance
-    (70, 0, 880, 20),  # Top wall except entrance open at 0-20 x
-    (0, 630, 900, 20),  # Bottom wall
-    (880, 20, 20, 610),  # Right wall except bottom right exit open
+def generar_laberinto_backtracking(ancho_pix, alto_pix,nivel):
+    columnas = ancho_pix // psiz
+    filas = alto_pix // psiz
 
-    # Internal walls creating a more complex maze
-    # Vertical walls
-    (100, 20, 20, 400),
-    (180, 230, 20, 400),
-    (300, 0, 20, 350),
-    (380, 170, 20, 400),
-    (500, 20, 20, 330),
-    (580, 310, 20, 320),
-    (700, 0, 20, 600),
-    # Horizontal walls
-    (80, 500, 100, 20),
-    (180, 230, 100, 20),
-    (180, 350, 200, 20),
-    (300, 490, 230, 20),
-    (520, 100, 180, 20),
-    (520, 430, 180, 20),
-    (700, 580, 180, 20),
-    # Additional small walls to make maze trickier
-    (220, 120, 20, 130),
-]
-paredes_lista_2 = [
-    (70,0,820,20),#Limite Superior
-    (0,50,20,600),#Limite Izquierda
-    (0,630,900,20),#Limite Abajo
-    (880,0,20,650),#Limite Derecha
-    #Creación del laberinto
-    (psiz+20,20,20,590-psiz),
-    (psiz+20,560,150,20),
-    (220,230,20,350),
-    (90,230,150,20),
-    (90,210-psiz,200,20),
-    (240+psiz,560,300,20),
-    (240+psiz,210-psiz,20,400),
+    visitado = [[False for _ in range(columnas)] for _ in range(filas)]
+    paredes = []
 
-]
-puerta1 = (100, 100, 200, 20)#Puerta Azul
+    def vecinos_validos(x, y):
+        dirs = [(0, -1), (1, 0), (0, 1), (-1, 0)]
+        random.shuffle(dirs)
+        for dx, dy in dirs:
+            nx, ny = x + dx, y + dy
+            if 0 <= nx < columnas and 0 <= ny < filas and not visitado[ny][nx]:
+                yield nx, ny, dx, dy
+
+    def remover_paredes(x1, y1, x2, y2):
+        px = min(x1, x2)
+        py = min(y1, y2)
+        if x1 == x2:
+            # horizontal
+            paredes.remove((x1 * psiz, py * psiz + psiz, psiz, 1))
+        elif y1 == y2:
+            # vertical
+            paredes.remove((px * psiz + psiz, y1 * psiz, 1, psiz))
+
+    def crear_muros_iniciales():
+        for y in range(filas):
+            for x in range(columnas):
+                if x < columnas - 1:
+                    paredes.append((x * psiz + psiz, y * psiz, 1, psiz))  # vertical
+                if y < filas - 1:
+                    paredes.append((x * psiz, y * psiz + psiz, psiz, 1))  # horizontal
+
+    def backtrack(x, y):
+        visitado[y][x] = True
+        for nx, ny, dx, dy in vecinos_validos(x, y):
+            if not visitado[ny][nx]:
+                remover_paredes(x, y, nx, ny)
+                backtrack(nx, ny)
+
+    # bordes
+    borde_grosor = 5
+    paredes_borde = [
+        (0, 0, ancho_pix, borde_grosor),                      # top
+        (0, 0, borde_grosor, alto_pix),                       # left
+        (0, alto_pix - borde_grosor, ancho_pix, borde_grosor),  # bottom
+        (ancho_pix - borde_grosor, 0, borde_grosor, alto_pix)   # right
+    ]
 
 
+    crear_muros_iniciales()
+    backtrack(0, 0)  # empieza desde esquina superior izquierda
 
+    # Si el nivel es fácil, eliminamos más paredes aleatorias
+    if nivel == 0:  # fácil
+        random.shuffle(paredes)
+        extra = int(len(paredes) * 0.25)  # elimina 25%
+        paredes = paredes[extra:]
+    elif nivel == 1:  # intermedio
+        random.shuffle(paredes)
+        extra = int(len(paredes) * 0.1)  # elimina 10%
+        paredes = paredes[extra:]
 
+    # nivel == 2 (difícil): no se elimina nada
+    # Asegura que el mono (inicio) tenga espacio libre
+    espacios_inicio = [
+        (0, 0), (1, 0), (2, 0),
+        (0, 1), (1, 1), (2, 1),
+        (0, 2), (1, 2), (2, 2)
+    ]
+    for cx, cy in espacios_inicio:
+        px = cx * psiz
+        py = cy * psiz
 
+        # Remover pared vertical derecha
+        try:
+            paredes.remove((px + psiz, py, 1, psiz))
+        except ValueError:
+            pass
 
+        # Remover pared horizontal inferior
+        try:
+            paredes.remove((px, py + psiz, psiz, 1))
+        except ValueError:
+            pass
 
+    return paredes + paredes_borde
+
+# Coordenadas de una puerta fija (puedes cambiarla o eliminarla si quieres puertas dinámicas)
+puerta1 = (100, 100, 10, 10)

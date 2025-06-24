@@ -1,28 +1,33 @@
 import pygame
-from pygame.sprite import Sprite
-Azul = (0,0,255)
+import random
+import os
 
+Azul = (0, 0, 255)
 
-
-
-class BotonAzul(pygame.sprite.Sprite):
+class Boton(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
-        self.image = pygame.Surface((10 * 2, 10 * 2), pygame.SRCALPHA)  # Superficie con canal alfa (transparente)
-        pygame.draw.circle(self.image, Azul, (10, 10), 10)  # Dibujar el círculo
-        self.rect = self.image.get_rect(center=(100,580))
+        self.image = pygame.Surface((20, 20), pygame.SRCALPHA)
+        pygame.draw.circle(self.image, Azul, (10, 10), 10)
+        self.rect = self.image.get_rect(center=(100, 580))
 
 
-class BotonVerde(pygame.sprite.Sprite):
+class Llave(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
-        self.image = pygame.Surface((10 * 2, 10 * 2), pygame.SRCALPHA)  # Superficie con canal alfa (transparente)
-        pygame.draw.circle(self.image, (0,255,0), (10, 10), 10)  # Dibujar el círculo
-        self.rect = self.image.get_rect(center=(550,580))
+        ruta = os.path.join("..", "sprites", "llave_puerta.png")
+        self.image = pygame.image.load(ruta).convert_alpha()
+        self.image = pygame.transform.scale(self.image, (30, 30))  # Ajusta el tamaño si es necesario
+        self.rect = self.image.get_rect()
 
-class Meta(pygame.sprite.Sprite):
-    def __init__(self, x, y, ancho, alto):
-        super().__init__()
-        self.image = pygame.Surface((ancho, alto))
-        self.image.fill((255,255,255))
-        self.rect = self.image.get_rect(topleft=(x, y))
+    def colocar_en_posicion_libre(self, paredes, ancho_total, alto_total):
+        intentos = 0
+        while intentos < 100:
+            x = random.randint(50, ancho_total - 50)
+            y = random.randint(50, alto_total - 50)
+            self.rect.topleft = (x, y)
+            if not pygame.sprite.spritecollideany(self, paredes):
+                return
+            intentos += 1
+        print("No se encontró una posición válida para la llave.")
+
